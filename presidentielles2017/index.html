@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='utf-8' />
+<title>Présidentielles 2017</title>
+<meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link href='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.css' rel='stylesheet' />
+<link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.7.0/mapbox-gl.css' rel='stylesheet' />
+
+
+
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
+    #map {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 100%;
+    }
+
+
+    /*Pop up au survol*/
+    .map-overlay {
+      position: absolute;
+      height: 280px;
+      width: 350px;
+      background: rgba(255, 255, 255, 0.8);
+      font-family: Arial, sans-serif;
+      overflow: auto;
+      border-radius: 3px;
+      opacity: 0.8;
+      z-index: 1;
+      padding: 10px;
+      top: 100px;
+      left: 10px;
+    }
+
+    .map-overlay-legend {
+      position: absolute;
+      height: 280px;
+      width: 350px;
+      background: rgba(255, 255, 255, 0.8);
+      font-family: Arial, sans-serif;
+      overflow: auto;
+      border-radius: 3px;
+      opacity: 0.8;
+      z-index: 1;
+      padding: 10px;
+      top: 10px;
+      right: 50px;
+    }
+
+
+#titre1 {
+color: black;
+font-size: 26px;
+font-weight: bold;
+position: absolute;
+left: 500px;
+top : 30px;
+ font-family: Verdana, sans-serif}
+  
+#titre2 {
+color: black;
+font-size: 15px;
+position: absolute;
+left: 500px;
+top : 60px;
+ font-family:Verdana, sans-serif}
+
+  #menu {
+      background: #fff;
+      position: absolute;
+      z-index: 1;
+      top: 10px;
+      left: 15px;
+      border-radius: 3px;
+      width: 120px;
+      border: 1px solid rgba(0, 0, 0, 0.4);
+      font-family: 'Open Sans', sans-serif;
+    }
+
+    #menu a {
+      font-size: 13px;
+      color: #404040;
+      display: block;
+      margin: 0;
+      padding: 0;
+      padding: 10px;
+      text-decoration: none;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+      text-align: center;
+    }
+
+    #menu a:last-child {
+      border: none;
+    }
+
+    #menu a:hover {
+      background-color: #f8f8f8;
+      color: #404040;
+    }
+
+    #menu a.active {
+      background-color: #1778bd;
+      color: white;
+    }
+
+    #menu a:hover {
+      background: #1778bd;
+      color: white;
+    }
+
+
+
+
+
+
+  </style>
+</head>
+
+<body>
+
+
+  <div id='map'></div>
+    <nav id="menu"></nav>
+
+<!--  
+ <input type="checkbox" checked data-toggle="toggle" data-on="2D" data-off="3D">
+
+ -->
+
+<div class='map-overlay-legend'><h2>
+
+  <div id='bv'></div>
+  <div id='graph'> <canvas id="canvas"></canvas></div>
+</div>
+
+
+ <div class='map-overlay'>
+    <button id="1" class="btn btn-secondary  btn-lg btn-block">Votes participation</button>
+    <button id="2" class="btn btn-secondary  btn-lg btn-block">Candidats gagnants</button>
+    <button id="3" class="btn btn-secondary  btn-lg btn-block">Emmanuel MACRON</button>
+    <button id="4" class="btn btn-secondary  btn-lg btn-block">François FILLON</button>
+    <button id="5" class="btn btn-secondary  btn-lg btn-block">Jean-Luc MÉLENCHON</button>
+  </div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.7.0/mapbox-gl.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js'></script>
+<link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
+<script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
+<script src="main.js"></script>
+   </body>
+</html>
+
